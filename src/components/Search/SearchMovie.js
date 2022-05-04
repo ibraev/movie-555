@@ -54,7 +54,6 @@ const SearchMovie = () => {
                 </div>
             </div>
         </Suspense>
-
     );
 };
 

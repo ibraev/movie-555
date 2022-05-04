@@ -2,13 +2,18 @@ import React, {Suspense} from 'react';
 import "./Detail.css"
 import RecommendationList from "../../components/RecommendationList/RecommendationList";
 import DetailCard from "../../components/DetailCard/DetailCard";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Detail = () => {
     return (
-        <Suspense fallback={<h1>Loading</h1>}>
+        <Suspense fallback={<Spinner/>}>
         <div className="container">
-            <DetailCard/>
-            <RecommendationList/>
+            <Suspense fallback={<Spinner/>}>
+                <DetailCard/>
+            </Suspense>
+           <Suspense fallback={<Spinner/>}>
+               <RecommendationList/>
+           </Suspense>
         </div>
         </Suspense>
     );
